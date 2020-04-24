@@ -12,17 +12,21 @@ module Players
         end
         counter += 1
       end
-
+#take the middle if available
       if valid_moves.include?(5)
         board.update(5, self)
-
+#take the corner if going second
       elsif board.turn_count == 1
         index = [1,3,7,9].sample
         board.update(index, self)
+#take a side square if 2 corners are taken first
       elsif board.turn_count == 3
         if board.cells[0] == board.cells[8] || board.cells[3] == board.cells[6]
-          index =
-
+          index = [2,3,6,8].sample
+          board.update(index,self)
+        else
+          valid_moves.select{|x| x.odd}.sample
+        end
       end
 
 
