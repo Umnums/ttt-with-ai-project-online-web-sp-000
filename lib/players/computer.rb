@@ -26,11 +26,11 @@ module Players
           board.update(index,self)
 #otherwise take a corner
         else
-          index = valid_moves.select{|x| x.odd}.sample
+          
           board.update(index,self)
         end
 #do something random for now
-      else
+      else  
           index = valid_moves.sample
           board.update(index,self)
       end
