@@ -29,7 +29,7 @@ module Players
 
           board.update(index,self)
         end
-#do something random for now
+#do something random for now - I think I have to iterate through win combinations to do it correctly
       else
           index = valid_moves.sample
           board.update(index,self)
