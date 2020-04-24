@@ -24,11 +24,17 @@ module Players
         if board.cells[0] == board.cells[8] || board.cells[3] == board.cells[6]
           index = [2,3,6,8].sample
           board.update(index,self)
+#otherwise take a corner
         else
-          valid_moves.select{|x| x.odd}.sample
+          index = valid_moves.select{|x| x.odd}.sample
+          board.update(index,self)
         end
+#do something random for now
+      else
+          index = valid_moves.sample
+          board.update(index,self)
       end
-
+      index
 
     end
 
