@@ -21,7 +21,7 @@ module Players
         board.update(index, self)
 #take a side square if 2 corners are taken first
       elsif board.turn_count == 3
-        if (board.cells[0] == board.cells[8] || board.cells[2] == board.cells[6]) && ([board.cells[0], board.cells[2], board.cells[6], board.cells[8].include?(/[XO]/))
+        if (board.cells[0] == board.cells[8] || board.cells[2] == board.cells[6]) && ([board.cells[0], board.cells[2], board.cells[6], board.cells[8].include?('XO'))
           index = [2,3,6,8].sample
           board.update(index,self)
 #otherwise take a corner
